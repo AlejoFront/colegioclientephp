@@ -1,0 +1,56 @@
+.title{
+    text-align: center;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.dashboard{
+    width: 85%;
+    display: flex;
+    justify-content: space-around;
+    margin: auto;
+}
+
+.dashboard .es{
+    background: #18611e;
+    min-height: 150px;
+    -webkit-box-shadow: -7px 10px 6px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: -7px 10px 6px 0px rgba(0,0,0,0.75);
+    box-shadow: -7px 10px 6px 0px rgba(0,0,0,0.75);
+    
+}
+
+.dashboard .mat{
+    background: #546118;
+    min-height: 150px;
+    -webkit-box-shadow: -7px 10px 6px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: -7px 10px 6px 0px rgba(0,0,0,0.75);
+    box-shadow: -7px 10px 6px 0px rgba(0,0,0,0.75);
+    
+}
+
+.dashboard .matr{
+    background: #182961;
+    min-height: 150px;
+    -webkit-box-shadow: -7px 10px 6px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: -7px 10px 6px 0px rgba(0,0,0,0.75);
+    box-shadow: -7px 10px 6px 0px rgba(0,0,0,0.75);
+    
+}
+
+.dashboard .es > h3, 
+.dashboard .mat > h3, 
+.dashboard .matr > h3 {
+    margin-top: 15%;
+    color: #FFFFFF;
+    padding: 10px;
+
+}
+
+
+.mt8{margin-top: 8%;}
+.cont-tb{
+    background: red;
+    width: 85%;
+    margin: auto;
+}

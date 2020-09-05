@@ -7,6 +7,9 @@
     <title>Colegio | Servicio Web Rest</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="./assets/css/footer.css">
+    <link rel="stylesheet" href="../assets/css/footer.css">
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/styles.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
@@ -20,7 +23,7 @@
         <!-- Links -->
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" href="ViewPrincipal.aspx">Principal</a>
+                <a class="nav-link" href="../index.php">Principal</a>
             </li>
             <!-- Dropdown -->
             <li class="nav-item dropdown">
@@ -28,7 +31,7 @@
                 </a>
                 <div class="dropdown-menu">
                     <a class="dropdown-item" href="#">Agregar Estudiante</a>
-                    <a class="dropdown-item" href="#">Listar Estudiantes</a>
+                    <a class="dropdown-item" href="./views/listarestudiantes.php">Listar Estudiantes</a>
                     <a class="dropdown-item" href="#">Buscar Estudiantes</a>
                     <a class="dropdown-item" href="#">Eliminar Estudiantes</a>
                     <a class="dropdown-item" href="#">Promedio Estudiante</a>
@@ -103,6 +106,10 @@
             </div>
         </div>
     </footer>
+
+
+
+    <script src="https://kit.fontawesome.com/ce4c312a95.js" crossorigin="anonymous"></script>
 </body>
 
 </html>

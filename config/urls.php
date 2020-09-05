@@ -1,4 +1,4 @@
 <?php
 
-    $url_matricula = 'http://localhost';
+    $url_matricula = '';
 
