@@ -1,9 +1,10 @@
 <?php 
-    include 'includes/menu_layout.php';       
+    include 'includes/menu_layout.php';
+    include 'config/routes.php.php';
 
-    $est = 5;
-    $mat = 78;
-    $matr = 15;
+    $est = $estudiantes['respuesta'];
+    $mat = $materias['respuesta'];
+    $matr = $matriculas['respuesta'];
     
     echo  '
             <h2 class="title">Dashboard</h2>
