@@ -53,3 +53,30 @@
     width: 85%;
     margin: auto;
 }
+
+.formbusquedaest{
+    width: 45%;
+}
+
+.contform {
+    width: 100%;
+    display: flex;
+}
+
+.contform > input[type="text"]{
+    margin-right: 2%;
+}
+
+.contformsadd{
+    width: 75%;
+    margin: auto;
+    margin-bottom: 10%;
+
+}
+
+.contformsadd > form > .contbtn{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

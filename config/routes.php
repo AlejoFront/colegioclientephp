@@ -1,8 +1,8 @@
 <?php
 
-    include 'config/ip.php';     
-    include 'config/proyecto.php';
-    include 'config/urls.php';
+    include 'ip.php';     
+    include 'proyecto.php';
+    include 'urls.php';
 
 
     // esto es informacion del dashboard 
@@ -12,4 +12,5 @@
 
 
     // para la clase AAA -> estudiante
-    $estudiantes = json_decode(file_get_contents($ip.$proyecto.$url_estudiantes),true);
+    $listarestudiantes = json_decode(file_get_contents($ip.$proyecto.$url_estudiantes),true);
+    

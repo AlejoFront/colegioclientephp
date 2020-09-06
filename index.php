@@ -1,6 +1,6 @@
 <?php 
     include 'includes/menu_layout.php';
-    include 'config/routes.php.php';
+    include 'config/routes.php';
 
     $est = $estudiantes['respuesta'];
     $mat = $materias['respuesta'];

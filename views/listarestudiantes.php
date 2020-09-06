@@ -1,11 +1,10 @@
 <?php
     include '../includes/menu_layout.php';
-    include 'config/routes.php.php';
-
-
-    
+    include '../config/routes.php';
 
 ?>
+
+    <h2 class="title">Listar Estudiantes</h2>
     <div class="cont-tb">
         <table class="table table-dark table-striped mt8">
         <thead>
@@ -23,17 +22,21 @@
         </thead>
         <tbody>
 
-                <?php for ($i=0; $i <count($estudiantes['Estudiante']) ; $i++) { 
+                <?php for ($i=0; $i <count($listarestudiantes['Estudiante']) ; $i++) { 
                     echo '<tr>'.
-                    '<td>'.$estudiantes['Estudiante'][$i]['nombres'].'</td>'.
-                    '<td>'.$estudiantes['Estudiante'][$i]['apellidos'].'</td>'.
-                    '<td>'.$estudiantes['Estudiante'][$i]['fechaNacimiento'].'</td>'.
-                    '<td>'.$estudiantes['Estudiante'][$i]['documentoIdentificacion'].'</td>'.
-                    '<td>'.$estudiantes['Estudiante'][$i]['genero'].'</td>'.
-                    '<td>'.$estudiantes['Estudiante'][$i]['eps'].'</td>'.
-                    '<td>'.$estudiantes['Estudiante'][$i]['direccion'].'</td>'.
-                    '<td>'.$estudiantes['Estudiante'][$i]['correo'].'</td>'.
-                    '<td>'.$estudiantes['Estudiante'][$i]['telefono'].'</td>'
+                    '<td>'.$listarestudiantes['Estudiante'][$i]['nombres'].'</td>'.
+                    '<td>'.$listarestudiantes['Estudiante'][$i]['apellidos'].'</td>'.
+                    '<td>'.$listarestudiantes['Estudiante'][$i]['fechaNacimiento'].'</td>'.
+                    '<td>'.$listarestudiantes['Estudiante'][$i]['documentoIdentificacion'].'</td>';
+                    if($listarestudiantes['Estudiante'][$i]['genero'] == '0'){
+                        echo '<td>'.'Hombre'.'</td>';
+                    }else{
+                        echo '<td>'.'Mujer'.'</td>';
+                    }
+                    echo '<td>'.$listarestudiantes['Estudiante'][$i]['eps'].'</td>'.
+                    '<td>'.$listarestudiantes['Estudiante'][$i]['direccion'].'</td>'.
+                    '<td>'.$listarestudiantes['Estudiante'][$i]['correo'].'</td>'.
+                    '<td>'.$listarestudiantes['Estudiante'][$i]['telefono'].'</td>'
                     .'</tr>';
                 } ?>
             

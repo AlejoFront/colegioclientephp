@@ -16,6 +16,9 @@
 </head>
 
 <body>
+
+    <?php $url = getcwd(); ?>
+
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
         <!-- Brand -->
         <a class="navbar-brand" href="#">Colegio</a>
@@ -23,18 +26,42 @@
         <!-- Links -->
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" href="../index.php">Principal</a>
+                <?php
+                    if(strpos($url,'\colegioclientephp\views')){
+                        echo '<a class="nav-link" href="../index.php">Principal</a>';
+                    }else{
+                        echo '<a class="nav-link" href="./index.php">Principal</a>';
+                    }
+                ?>
+                
             </li>
             <!-- Dropdown -->
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Estudiantes
                 </a>
                 <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#">Agregar Estudiante</a>
-                    <a class="dropdown-item" href="./views/listarestudiantes.php">Listar Estudiantes</a>
-                    <a class="dropdown-item" href="#">Buscar Estudiantes</a>
-                    <a class="dropdown-item" href="#">Eliminar Estudiantes</a>
-                    <a class="dropdown-item" href="#">Promedio Estudiante</a>
+
+                <?php
+                        if ( strpos($url,'\views')){
+                            echo 
+                            '<a class="dropdown-item" href="./agregarestudiante.php">Agregar Estudiante</a>'.
+                            '<a class="dropdown-item" href="./listarestudiantes.php">Listar Estudiantes</a>'.
+                            '<a class="dropdown-item" href="./buscarestudiantes.php">Buscar Estudiantes</a>'.
+                            '<a class="dropdown-item" href="./eliminarestudiante.php">Eliminar Estudiantes</a>'.
+                            '<a class="dropdown-item" href="./promedioestudiante.php">Promedio Estudiante</a>'
+                            ;                       
+                        }else{
+                            echo 
+                            '<a class="dropdown-item" href="./views/agregarestudiante.php">Agregar Estudiante</a>'.
+                            '<a class="dropdown-item" href="./views/listarestudiantes.php">Listar Estudiantes</a>'.
+                            '<a class="dropdown-item" href="./views/buscarestudiantes.php">Buscar Estudiantes</a>'.
+                            '<a class="dropdown-item" href="./views/eliminarestudiante.php">Eliminar Estudiantes</a>'.
+                            '<a class="dropdown-item" href="./views/promedioestudiante.php">Promedio Estudiante</a>'
+                            ;
+                        }
+                ?>
+
+
                 </div>
             </li>
 
@@ -68,6 +95,7 @@
 
 
     <script src="https://kit.fontawesome.com/ce4c312a95.js" crossorigin="anonymous"></script>
+
 </body>
 
 </html>
