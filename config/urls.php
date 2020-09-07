@@ -15,3 +15,8 @@
     $url_buscarestudiante = 'servicioWebEstudiante/buscarEstudiante?documento';
     $url_eliminarestudiante = 'servicioWebEstudiante/eliminarEstudiante?documento';
     $url_buscarpromedioestudiante = 'serviciosWebMatricula/darPromedioEstudiante?documento';
+
+
+    //Servicio Matriculas
+
+    $url_list_matriculas = 'serviciosWebMatricula/darMatriculas';

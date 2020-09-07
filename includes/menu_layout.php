@@ -63,12 +63,28 @@
                 <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Matriculas
                 </a>
                 <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#">Matricular Estudiante</a>
-                    <a class="dropdown-item" href="#">Listar Matriculas</a>
-                    <a class="dropdown-item" href="#">Ver Matriculas Estudiante</a>
-                    <a class="dropdown-item" href="#">Actualizar Matriculas Estudiante</a>
-                    <a class="dropdown-item" href="#">Eliminar Matricula</a>
-                    <a class="dropdown-item" href="#">Estadisticas de Matricula</a>
+                        <?php 
+                            if ( strpos($url,'\views')){
+                                echo
+                                '<a class="dropdown-item" href="./agregarMatricula.php">Matricular Estudiante</a>'.
+                                '<a class="dropdown-item" href="./listarMatricula.php">Listar Matriculas</a>'.
+                                '<a class="dropdown-item" href="./verMatriculaEstudiante.php">Ver Matriculas Estudiante</a>'.
+                                '<a class="dropdown-item" href="./actualizarMatriculaEstudiante.php">Actualizar Matriculas Estudiante</a>'.
+                                '<a class="dropdown-item" href="./eliminarMatriculaEstudiante.php">Eliminar Matricula</a>'.
+                                '<a class="dropdown-item" href="./estadisticaMatriculaEstudiante.php">Estadisticas de Matricula</a>'
+                                ;
+                            }else{
+
+                                echo
+                                '<a class="dropdown-item" href="./views/agregarMatricula.php">Matricular Estudiante</a>'.
+                                '<a class="dropdown-item" href="./views/listarMatricula.php">Listar Matriculas</a>'.
+                                '<a class="dropdown-item" href="./views/verMatriculaEstudiante.php">Ver Matriculas Estudiante</a>'.
+                                '<a class="dropdown-item" href="./views/actualizarMatriculaEstudiante.php">Actualizar Matriculas Estudiante</a>'.
+                                '<a class="dropdown-item" href="./views/eliminarMatriculaEstudiante.php">Eliminar Matricula</a>'.
+                                '<a class="dropdown-item" href="./views/estadisticaMatriculaEstudiante.php">Estadisticas de Matricula</a>'
+                                ;
+                            }
+                        ?>
                 </div>
             </li>
 

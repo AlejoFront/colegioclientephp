@@ -49,6 +49,10 @@
 
 
 .mt8{margin-top: 8%;}
+.mt9{margin-top: 9%;}
+.mt10{margin-top: 10%;}
+.mt11{margin-top: 11%;}
+.mt12{margin-top: 12%;}
 .cont-tb{
     width: 85%;
     margin: auto;
@@ -79,4 +83,21 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.modal{
+    width: 75% !important;
+}
+
+.modal-content{
+    width: 153% !important;
+}
+
+
+.fech {
+    display: flex !important;
+}
+
+.formiz {
+    margin-right: 5%;
 }
