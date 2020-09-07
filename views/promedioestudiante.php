@@ -71,7 +71,7 @@
         <tbody>
 
         <?php
-                if($validate == true){
+                if($validate == true &&  $buscarestudiantes != null && $buscarpromedioEst != null){
                     echo '<tr>'.
                     '<td>'.$buscarestudiantes['nombres'].'</td>'.
                     '<td>'.$buscarestudiantes['apellidos'].'</td>'.

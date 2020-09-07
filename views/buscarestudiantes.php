@@ -1,4 +1,5 @@
 <?php
+    echo "<title>Buscar Estudiantes | Servicio Web Rest</title>";
     include '../includes/menu_layout.php';
     include '../config/routes.php';
     $validate = false;
@@ -80,9 +81,15 @@
                     '<td>'.$buscarestudiantes['nombres'].'</td>'.
                     '<td>'.$buscarestudiantes['apellidos'].'</td>'.
                     '<td>'.$buscarestudiantes['fechaNacimiento'].'</td>'.
-                    '<td>'.$buscarestudiantes['documentoIdentificacion'].'</td>'.
-                    '<td>'.$buscarestudiantes['genero'].'</td>'.
-                    '<td>'.$buscarestudiantes['eps'].'</td>'.
+                    '<td>'.$buscarestudiantes['documentoIdentificacion'].'</td>';
+                    if ($buscarestudiantes['genero'] == 0){
+                        echo '<td>'.'Hombre'.'</td>';
+                    }else{
+                        echo '<td>'.'Mujer'.'</td>';
+                    }
+                    
+                    
+                    echo '<td>'.$buscarestudiantes['eps'].'</td>'.
                     '<td>'.$buscarestudiantes['direccion'].'</td>'.
                     '<td>'.$buscarestudiantes['correo'].'</td>'.
                     '<td>'.$buscarestudiantes['telefono'].'</td>'
@@ -97,3 +104,4 @@
     </table>
     </div>
 <br><br><br><br>
+<?php include '../includes/footer_layout.php';?>

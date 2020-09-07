@@ -1,4 +1,5 @@
-<?php 
+<?php
+    echo "<title>Colegio | Servicio Web Rest</title>";
     include 'includes/menu_layout.php';
     include 'config/routes.php';
 
@@ -16,3 +17,5 @@
             </div>
     
             ';
+
+    include 'includes/footer_layout.php';

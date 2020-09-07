@@ -2,6 +2,7 @@
     include '../includes/menu_layout.php';
     include '../config/routes.php';
     $validate = false;
+    $del = false;
     $parametro = '';
     $document='';
     if(isset($_POST['btnbuscar'])){
@@ -11,13 +12,12 @@
             $buscarestudiantes = json_decode(file_get_contents($ip.$proyecto.$url_buscarestudiante.$parametro),true);
     }
     if(isset($_POST['btndelete'])){
+        $del = true;
         $document = trim($_POST['doct']);
         $parametro = "=".$document;
         $eliminarestudiante = json_decode(file_get_contents($ip.$proyecto.$url_eliminarestudiante.$parametro),true);
+        $compdel = json_decode(file_get_contents($ip.$proyecto.$url_buscarestudiante.$parametro),true);
 
-        if($buscarestudiantes = json_decode(file_get_contents($ip.$proyecto.$url_buscarestudiante.$parametro),true) == null){
-            echo "eliminado";
-        }
     }
 ?>
 
@@ -47,7 +47,7 @@
                             if($buscarestudiantes == null){
                                 echo '
                                 <div class="alert alert-danger" alert-dismissible fade show" role="alert">
-                                    <strong>Losiento!</strong> Estudiante No encontrado.
+                                    <strong>Los iento!</strong> Estudiante No encontrado.
                                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                     </button>
@@ -64,6 +64,26 @@
                                 </div>
                                     ';
                             }
+                        }
+
+                        if(isset($_POST['btndelete']) && $del == true && $compdel == null){
+                            echo '                               
+                            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                <strong>Correcto!</strong> Estudiante Eliminado!.
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                                ';
+                        }else if(isset($_POST['btndelete']) && $compdel != null){
+                            echo '
+                            <div class="alert alert-danger" alert-dismissible fade show" role="alert">
+                                <strong>Ups!</strong> No se ha eliminado el estudiante intentalo nuevamente.
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>    
+                                ';
                         }
                     
                     ?>
@@ -85,21 +105,25 @@
         <tbody>
 
         <?php
-                if($validate == true){
+                if($validate == true &&  $buscarestudiantes != null){
                     echo '<tr>'.
                     '<td>'.$buscarestudiantes['nombres'].'</td>'.
                     '<td>'.$buscarestudiantes['apellidos'].'</td>'.
                     '<td>'.$buscarestudiantes['fechaNacimiento'].'</td>'.
-                    '<td>'.$buscarestudiantes['documentoIdentificacion'].'</td>'.
-                    '<td>'.$buscarestudiantes['genero'].'</td>'.
-                    '<td>'.$buscarestudiantes['eps'].'</td>'.
+                    '<td>'.$buscarestudiantes['documentoIdentificacion'].'</td>';
+                    if ($buscarestudiantes['genero'] == 0){
+                        echo '<td>'.'Hombre'.'</td>'; 
+                    }else{
+                        echo '<td>'.'Mujer'.'</td>';
+                    }
+                    echo '<td>'.$buscarestudiantes['eps'].'</td>'.
                     '<td>'.$buscarestudiantes['direccion'].'</td>'.
                     '<td>'.$buscarestudiantes['correo'].'</td>'.
                     '<td>'.$buscarestudiantes['telefono'].'</td>'.
                     '<td>'.'
                         <form method ="POST">
                             <input type="text" class="form-control" name="doct" id="doct" value='.$document.' style="display:none;">
-                            <input type="submit" class="btn btn-danger" value="X"  name="btndelete" id="btndelete">
+                            <button type="submit" class="btn btn-danger" name="btndelete" id="btndelete"><i class="fas fa-trash-alt"></i></button>
                         </form>
                     '.'</td>'
                     .'</tr>';
@@ -112,4 +136,5 @@
         
     </table>
     </div>
-<br><br><br><br>
+<br>
+<?php include '../includes/footer_layout.php';?>
