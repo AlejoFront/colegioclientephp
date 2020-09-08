@@ -14,7 +14,10 @@
         $genero = trim($_POST['genero']);
         $telefono = trim($_POST['telefono']);
 
-        
+        array(
+            $apellidos => $apellido,
+            
+        )
     }
     
     
