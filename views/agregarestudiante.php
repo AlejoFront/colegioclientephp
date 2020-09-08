@@ -28,7 +28,7 @@
 
        ];
 
-      echo  json_encode($array);
+      json_encode($array);
     }
     
     
