@@ -9,15 +9,26 @@
         $apellido = trim($_POST['apellido']);
         $correo = trim($_POST['correo']);
         $direccion = trim($_POST['direccion']);
-        $fechaNacim = trim($_POST['fechaNacim']);
+        $fechaNacim = trim($_POST['fechaNacim'])."T00:00:00-05:00";
         $eps = trim($_POST['eps']);
         $genero = trim($_POST['genero']);
         $telefono = trim($_POST['telefono']);
 
-        array(
-            $apellidos => $apellido,
-            
-        )
+       $array = [
+            "apellidos" => $apellido,
+            "correo" => $correo,
+            "direccion" => $direccion,
+            "documentoIdentificacion" => $documento,
+            "eps" => $eps,
+            "fechaNacimiento" => $fechaNacim,
+            "genero"=> $genero,
+            "nombres" => $nombre,
+            "telefono" => $telefono
+
+
+       ];
+
+      echo  json_encode($array);
     }
     
     
@@ -47,13 +58,13 @@
         </div>
 
         <div class="form-group">
-            <label for="direccion">direccion :</label>
-            <input type="date" class="form-control" placeholder="Digita tu direccion" id="direccion" name="direccion">
+            <label for="direccion">Fecha Nacimiento :</label>
+            <input type="date" class="form-control"  id="fechaNacim" name="fechaNacim">
         </div>
 
         <div class="form-group">
-            <label for="fechaNacim">Fecha Nacimiento:</label>
-            <input type="text" class="form-control" placeholder="Digita tu fechaNacim" id="fechaNacim" name="fechaNacim">
+            <label for="fechaNacim">direccion:</label>
+            <input type="text" class="form-control" placeholder="Digita tu direccion" id="direccion" name="direccion">
         </div>
 
 

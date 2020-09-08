@@ -9,7 +9,7 @@
             $parametro = "=".$document;
             $buscarestudiantes = json_decode(file_get_contents($ip.$proyecto.$url_buscarestudiante.$parametro),true);
 
-
+        print_r($buscarestudiantes);
     }
     
 ?>
