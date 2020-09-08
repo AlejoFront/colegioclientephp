@@ -7,7 +7,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
 
     <?php $url = getcwd(); ?>
@@ -68,6 +68,7 @@
                                 echo
                                 '<a class="dropdown-item" href="./agregarMatricula.php">Matricular Estudiante</a>'.
                                 '<a class="dropdown-item" href="./listarMatricula.php">Listar Matriculas</a>'.
+                                '<a class="dropdown-item" href="./listarMatriculaDosParametros.php">Listar Matriculas por dos parametros</a>'.
                                 '<a class="dropdown-item" href="./verMatriculaEstudiante.php">Buscar / Ver Matriculas Estudiante</a>'.
                                 '<a class="dropdown-item" href="./actualizarMatriculaEstudiante.php">Actualizar Matriculas Estudiante</a>'.
                                 '<a class="dropdown-item" href="./eliminarMatriculaEstudiante.php">Eliminar Matricula</a>'.
@@ -78,6 +79,7 @@
                                 echo
                                 '<a class="dropdown-item" href="./views/agregarMatricula.php">Matricular Estudiante</a>'.
                                 '<a class="dropdown-item" href="./views/listarMatricula.php">Listar Matriculas</a>'.
+                                '<a class="dropdown-item" href="./views/listarMatriculaDosParametros.php">Listar Matriculas por dos parametros</a>'.
                                 '<a class="dropdown-item" href="./views/verMatriculaEstudiante.php">Buscar / Ver Matriculas Estudiante</a>'.
                                 '<a class="dropdown-item" href="./views/actualizarMatriculaEstudiante.php">Actualizar Matriculas Estudiante</a>'.
                                 '<a class="dropdown-item" href="./views/eliminarMatriculaEstudiante.php">Eliminar Matricula</a>'.

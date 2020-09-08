@@ -42,5 +42,5 @@
         </div>
     </footer>
 
-
+    
     <script src="https://kit.fontawesome.com/ce4c312a95.js" crossorigin="anonymous"></script>

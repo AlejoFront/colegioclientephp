@@ -19,11 +19,14 @@
     //Servicio Materia
 
     $url_buscarmateria = 'serviciosWebMateria/darMateriaPorCodigo?codigo';
-
+    
     //Servicio Matriculas
 
     $url_list_matriculas = 'serviciosWebMatricula/darMatriculas';
     $url_matr_est_grado =  'serviciosWebMatricula/darMatriculasEstudianteGrado?documento';
-
-
+    $url_mtr_est = 'serviciosWebMatricula/darMatriculaCodigo?codigo';
+    $url_update_mtr_est = 'serviciosWebMatricula/actualizarMatricula';
+    $url_matr_estado = 'serviciosWebMatricula/darMatriculasPorEstado?estado';
+    $url_matr_docu_est = 'serviciosWebMatricula/darMatriculasEstudiante?documento';
+    $url_mtr_grado = 'serviciosWebMateria/darMateriasPorGrado?grado';
     

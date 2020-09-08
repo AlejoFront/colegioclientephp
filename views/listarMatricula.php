@@ -39,14 +39,32 @@
                                         $parametro = "=".$listarMatriculas['Matricula'][$i]['pkEstudiante'];
                                         $nombest = json_decode(file_get_contents($ip.$proyecto.$url_buscarestudiante.$parametro),true);
                                         echo '<td>'.$nombest['nombres'].'</td>';
-                                    echo
-                                    '<td>'.$listarMatriculas['Matricula'][$i]['pkMateria'].'</td>'.
-                                    '<td>'.$listarMatriculas['Matricula'][$i]['notaDefinitiva'].'</td>'.
-                                    '<td>'.$listarMatriculas['Matricula'][$i]['fechaInscripcion'].'</td>'.
-                                    '<td>'.$listarMatriculas['Matricula'][$i]['fechaInicio'].'</td>'.
-                                    '<td>'.$listarMatriculas['Matricula'][$i]['fechaFinal'].'</td>'.
-                                    '<td>'.$listarMatriculas['Matricula'][$i]['estado'].'</td>'
-                                    ;
+                                        $parametromat = "=".$listarMatriculas['Matricula'][$i]['pkMateria'];
+                                        $nommat = json_decode(file_get_contents($ip.$proyecto.$url_buscarmateria.$parametromat),true);
+                                        echo '<td>'.$nommat['nombre'].'</td>'.
+                                        '<td>'.$listarMatriculas['Matricula'][$i]['notaDefinitiva'].'</td>'.
+                                        '<td>'.$listarMatriculas['Matricula'][$i]['fechaInscripcion'].'</td>'.
+                                        '<td>'.$listarMatriculas['Matricula'][$i]['fechaInicio'].'</td>'.
+                                        '<td>'.$listarMatriculas['Matricula'][$i]['fechaFinal'].'</td>';
+                                        if ($listarMatriculas['Matricula'][$i]['estado'] == 0)
+                                        {
+                                            echo '<td>'.'Matriculada'.'</td>';
+                                        }
+                                        else if ($listarMatriculas['Matricula'][$i]['estado'] == 1)
+                                        {
+                                            echo '<td>'.'Cursando'.'</td>';
+                                        }
+                                        else if ($listarMatriculas['Matricula'][$i]['estado'] == 2)
+                                        {
+                                            echo '<td>'.'Rerpobada'.'</td>';
+                                        }
+                                        else if ($listarMatriculas['Matricula'][$i]['estado'] == 3)
+                                        {
+                                            echo '<td>'.'Aprobada'.'</td>';
+                                        }
+                                 echo '</tr>';
+                                    
+                                    
                                 }
                             }
                         }

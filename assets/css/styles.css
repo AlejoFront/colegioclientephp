@@ -101,3 +101,33 @@
 .formiz {
     margin-right: 5%;
 }
+
+.filters {
+    width: 85%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.filters > form{
+
+    width: 45%;
+    display: flex;
+}
+
+.filters > form > .form-group{
+
+    width: 85%;
+}
+
+.filters > form > .contsub{
+    width: 15%;
+
+    display: flex;
+    justify-content: center;
+}
+
+.filters > form > .contsub input[type="submit"]{
+    margin: auto;
+    margin-top: 40%;
+}
