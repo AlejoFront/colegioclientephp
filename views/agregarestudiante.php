@@ -2,8 +2,11 @@
     echo "<title> Matricular Estudiante | Servicio Web Rest</title>";
     include '../includes/menu_layout.php';
     include '../config/routes.php';
-
+    $result ="";
+    $respuesta =0;
+    $valitade = false;
     if(isset($_POST['btnsave'])){
+        $valitade = true;
         $documento = trim($_POST['documento']);
         $nombre = trim($_POST['nombre']);
         $apellido = trim($_POST['apellido']);
@@ -13,7 +16,8 @@
         $eps = trim($_POST['eps']);
         $genero = trim($_POST['genero']);
         $telefono = trim($_POST['telefono']);
-
+        $url = $ip.$proyecto.$url_addestudiante;
+        $ch = curl_init($url);
        $array = [
             "apellidos" => $apellido,
             "correo" => $correo,
@@ -28,15 +32,47 @@
 
        ];
 
-      json_encode($array);
+     $require = json_encode($array);
+     curl_setopt($ch, CURLOPT_POSTFIELDS, $require);
+     curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
+     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+     $result = curl_exec($ch);
+     $respuesta = curl_getinfo($ch,CURLINFO_HTTP_CODE);
+     curl_close($ch);
+
+     
     }
     
-    
+
 ?>
 
 <h2 class="title">Agregar Estudainte</h2>
 
 <div class="contformsadd">
+        <?php 
+                if($valitade != false){
+                    if($respuesta == 204){
+                        echo '
+                        <div class="alert alert-success" alert-dismissible fade show" role="alert">
+                             Estudiante Agregado.
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>    
+                            ';
+                    }else {
+                        echo '
+                        <div class="alert alert-danger" alert-dismissible fade show" role="alert">
+                            <strong>Los iento!</strong> Estudiante No Agregado.
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>    
+                            ';
+                    }
+                }
+        
+        ?>
     <form method="POST">
         <div class="form-group">
             <label for="nombre">Nombre(s):</label>
