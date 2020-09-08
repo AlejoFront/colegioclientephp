@@ -20,3 +20,4 @@
     //para la clase CCC -> Matriculas
 
     $listarMatriculas = json_decode(file_get_contents($ip.$proyecto.$url_list_matriculas),true);
+    

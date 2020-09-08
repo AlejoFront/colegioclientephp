@@ -68,7 +68,7 @@
                                 echo
                                 '<a class="dropdown-item" href="./agregarMatricula.php">Matricular Estudiante</a>'.
                                 '<a class="dropdown-item" href="./listarMatricula.php">Listar Matriculas</a>'.
-                                '<a class="dropdown-item" href="./verMatriculaEstudiante.php">Ver Matriculas Estudiante</a>'.
+                                '<a class="dropdown-item" href="./verMatriculaEstudiante.php">Buscar / Ver Matriculas Estudiante</a>'.
                                 '<a class="dropdown-item" href="./actualizarMatriculaEstudiante.php">Actualizar Matriculas Estudiante</a>'.
                                 '<a class="dropdown-item" href="./eliminarMatriculaEstudiante.php">Eliminar Matricula</a>'.
                                 '<a class="dropdown-item" href="./estadisticaMatriculaEstudiante.php">Estadisticas de Matricula</a>'
@@ -78,7 +78,7 @@
                                 echo
                                 '<a class="dropdown-item" href="./views/agregarMatricula.php">Matricular Estudiante</a>'.
                                 '<a class="dropdown-item" href="./views/listarMatricula.php">Listar Matriculas</a>'.
-                                '<a class="dropdown-item" href="./views/verMatriculaEstudiante.php">Ver Matriculas Estudiante</a>'.
+                                '<a class="dropdown-item" href="./views/verMatriculaEstudiante.php">Buscar / Ver Matriculas Estudiante</a>'.
                                 '<a class="dropdown-item" href="./views/actualizarMatriculaEstudiante.php">Actualizar Matriculas Estudiante</a>'.
                                 '<a class="dropdown-item" href="./views/eliminarMatriculaEstudiante.php">Eliminar Matricula</a>'.
                                 '<a class="dropdown-item" href="./views/estadisticaMatriculaEstudiante.php">Estadisticas de Matricula</a>'

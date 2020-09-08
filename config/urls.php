@@ -16,7 +16,14 @@
     $url_eliminarestudiante = 'servicioWebEstudiante/eliminarEstudiante?documento';
     $url_buscarpromedioestudiante = 'serviciosWebMatricula/darPromedioEstudiante?documento';
 
+    //Servicio Materia
+
+    $url_buscarmateria = 'serviciosWebMateria/darMateriaPorCodigo?codigo';
 
     //Servicio Matriculas
 
     $url_list_matriculas = 'serviciosWebMatricula/darMatriculas';
+    $url_matr_est_grado =  'serviciosWebMatricula/darMatriculasEstudianteGrado?documento';
+
+
+    

@@ -39,7 +39,7 @@
                             if($buscarestudiantes == null){
                                 echo '
                                 <div class="alert alert-danger" alert-dismissible fade show" role="alert">
-                                    <strong>Losiento!</strong> Estudiante No encontrado.
+                                    <strong>Lo siento!</strong> Estudiante No encontrado.
                                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                     </button>
@@ -76,7 +76,7 @@
         <tbody>
 
         <?php
-                if($validate == true){
+                if($validate == true && $buscarestudiantes != null){
                     echo '<tr>'.
                     '<td>'.$buscarestudiantes['nombres'].'</td>'.
                     '<td>'.$buscarestudiantes['apellidos'].'</td>'.

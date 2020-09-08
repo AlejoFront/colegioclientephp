@@ -21,7 +21,7 @@
     }
 ?>
 
-            <h2 class="title">Buscar Estudainte por documento</h2>
+            <h2 class="title">Eliminar Estudainte por documento</h2>
     <div class="cont-tb">
 
 
