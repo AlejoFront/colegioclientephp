@@ -2,7 +2,7 @@
     echo "<title>Grafica Materias por grado | Servicio Web Rest</title>";
     include '../includes/menu_layout.php';
     include '../config/routes.php';
-    //$valgrado1,$valgrado2,$valgrado3,$valgrado4,$valgrado5,$valgrado6,$valgrado7,$valgrado8,$valgrado9,$valgrado10,$valgrado11 = "";
+
 
     for($i=1;$i<12;$i++){
         $parametro = "=".$i;

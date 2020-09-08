@@ -3,6 +3,19 @@
     include '../includes/menu_layout.php';
     include '../config/routes.php';
 
+    if(isset($_POST['btnsave'])){
+        $documento = trim($_POST['documento']);
+        $nombre = trim($_POST['nombre']);
+        $apellido = trim($_POST['apellido']);
+        $correo = trim($_POST['correo']);
+        $direccion = trim($_POST['direccion']);
+        $fechaNacim = trim($_POST['fechaNacim']);
+        $eps = trim($_POST['eps']);
+        $genero = trim($_POST['genero']);
+        $telefono = trim($_POST['telefono']);
+
+        
+    }
     
     
 ?>
@@ -48,7 +61,7 @@
 
         <div class="form-group">
             <label for="genero">Genero:</label>
-            <select class="form-control" id="sel1">
+            <select class="form-control" id="genero" name="genero">
                 <option>Selecciona tu genero</option>
                 <option value="0">Hombre</option>
                 <option value="1">Mujer</option>
@@ -62,7 +75,7 @@
 
 
         <div class="contbtn">
-            <button type="submit" class="btn btn-primary">Guardar Estudiante</button>
+            <button type="submit" class="btn btn-primary" name="btnsave" id="btnsave">Guardar Estudiante</button>
         </div>
     </form> 
 </div>
