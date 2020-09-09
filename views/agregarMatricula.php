@@ -24,24 +24,35 @@
         $buscarestudiantes = json_decode(file_get_contents($ip.$proyecto.$url_buscarestudiante.$parametrodoc),true);
         $buscarmatrigradoest = json_decode(file_get_contents($ip.$proyecto.$url_mtr_grado.$parametrograd),true);
         $grado = $idgrado;
+      
     }
 
     if(isset($_POST['btnSave'])){
         $validsave = true;
 
-        $grado = trim($_POST['paramgrado']);
+        $grado = "=".trim($_POST['paramgrado']);
         $docuest = trim($_POST['paramdocumento']);
-        $pfechinicio= trim($_POST['fechInicio'])."T00:00:00-05:00";
+        $pfechinicio = trim($_POST['fechInicio'])."T00:00:00-05:00";
         $pfechfinal = trim($_POST['fechFinal'])."T00:00:00-05:00";
         $paramgrado = $grado;
 
-        $buscarmatrigradoest = json_decode(file_get_contents($ip.$proyecto.$url_mtr_grado.$parametrograd),true);
+        $buscarmatrigradoest = json_decode(file_get_contents($ip.$proyecto.$url_mtr_grado.$paramgrado),true);
+        
 
         for($i=0;$i<count($buscarmatrigradoest['Materia']);$i++){
+
+            $pkMateria = $buscarmatrigradoest['Materia'][$i]['codigo'];
             $url = $ip.$proyecto.$url_add_matr;
             $ch = curl_init($url);
             $array = [
-                
+                "codigo" => 0,
+                "estado" => 1,
+                "fechaFinal" => $pfechfinal,
+                "fechaInicio" => $pfechinicio,
+                "fechaInscripcion" => date('Y-m-d')."T00:00:00-05:00",
+                "notaDefinitiva" => 0.0,
+                "pkEstudiante" => $docuest,
+                "pkMateria" => $pkMateria
             ];
             $require = json_encode($array);
             curl_setopt($ch, CURLOPT_POSTFIELDS, $require);
@@ -109,7 +120,30 @@
                         }
                     
                     ?>
-
+                    <?php 
+                            if($validsave != false){
+                                if($respuesta == 204){
+                                    echo '
+                                    <div class="alert alert-success" alert-dismissible fade show" role="alert">
+                                        Estudiante Agregado.
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>    
+                                        ';
+                                }else {
+                                    echo '
+                                    <div class="alert alert-danger" alert-dismissible fade show" role="alert">
+                                        <strong>Los iento!</strong> Estudiante No Agregado.
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>    
+                                        ';
+                                }
+                            }
+                    
+                    ?>
                 <table class="table table-dark table-striped ">
                     <thead>
                         <tr>
@@ -158,7 +192,6 @@
                                     <div class="contform">
                                     <select class="form-control" id="grado" name="gradoselect">
                                         <option value="0">Seleccione el grado</option>
-                                        <option value="12">Todos los grados</option>
                                         <option value="1">Grado 1</option>
                                         <option value="2">Grado 2</option>
                                         <option value="3">Grado 3</option>

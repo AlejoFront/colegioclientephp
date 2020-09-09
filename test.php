@@ -1,13 +1,13 @@
 
 <?php
-$hoy = getdate();
-print_r($hoy);
+// $hoy = getdate();
+// print_r($hoy);
 
-echo "<br>";
+// echo "<br>";
 
-echo $hoy['year']."-".$hoy['mday'];
+// echo $hoy['year']."-".$hoy['mday'];
 
-echo date('Y-m-d');
+echo date('Y-m-d')."T00:00:00-05:00";
 
 
 ?>
