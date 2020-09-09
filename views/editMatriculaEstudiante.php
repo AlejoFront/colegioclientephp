@@ -7,12 +7,14 @@ $cdmat = "";
 $cdest = "";
 if(isset($_POST['btnupdate'])){
     $cdmat = trim($_POST['idmat']);
+    $cdmateria = trim($_POST['idmater']);
     $cdest = trim($_POST['idestu']);
 
         $parametroest = "=".$cdest;
         $parametromat = "=".$cdmat;
+        $parametromateria = "=".$cdmateria;
         $buscarestudiantes = json_decode(file_get_contents($ip.$proyecto.$url_buscarestudiante.$parametroest),true);
-        $buscarmateria =json_decode(file_get_contents($ip.$proyecto.$url_buscarmateria.$parametromat),true);
+        $buscarmateria =json_decode(file_get_contents($ip.$proyecto.$url_buscarmateria.$parametromateria),true);
         $matr_est_grado = json_decode(file_get_contents($ip.$proyecto.$url_mtr_est.$parametromat),true);       
 }
 
