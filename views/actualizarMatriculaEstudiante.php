@@ -252,12 +252,12 @@
                                             $cdestu = $buscarmatrigradoest['Matricula'][$i]['pkEstudiante'];
                                             echo '<tr>'.
                                             '<td>'.$buscarmatrigradoest['Matricula'][$i]['codigo'].'</td>';
-                                            $parametrom = "=".$buscarmatrigradoest['Matricula'][$i]['pkEstudiante'];
-                                            $nombest = json_decode(file_get_contents($ip.$proyecto.$url_buscarestudiante.$parametrom),true);
+                                            $parametroest = "=".$buscarmatrigradoest['Matricula'][$i]['pkEstudiante'];
+                                            $nombest = json_decode(file_get_contents($ip.$proyecto.$url_buscarestudiante.$parametroest),true);
                                             echo '<td>'.$nombest['nombres'].'</td>';
 
-                                            $parametroest = $buscarmatrigradoest['Matricula'][$i]['pkMateria'];
-                                            $materia = json_decode(file_get_contents($ip.$proyecto.$url_buscarmateria.$parametroest),true);
+                                            $parametrom ="=". $buscarmatrigradoest['Matricula'][$i]['pkMateria'];
+                                            $materia = json_decode(file_get_contents($ip.$proyecto.$url_buscarmateria.$parametrom),true);
                                             echo '<td>'.$materia['nombre'].'</td>'.
                                             '<td>'.$buscarmatrigradoest['Matricula'][$i]['notaDefinitiva'].'</td>';
 

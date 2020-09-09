@@ -6,6 +6,7 @@
     $validview = false;
     $validsr = false;
     $document = "";
+    $idgrado =0;
     if(isset($_POST['btnbuscar'])){
             $validate = true;
             $document = trim($_POST['documento']);
@@ -29,6 +30,9 @@
         if($idgrado != 12){
             $buscarmatrigradoest = json_decode(file_get_contents($ip.$proyecto.$url_matr_est_grado.$parametro),true);
         }else{
+            $doct = "=".$document;
+            $buscarmatrigradoest = json_decode(file_get_contents($ip.$proyecto.$url_matr_docu_est.$doct),true);
+
             
         }
         
@@ -213,20 +217,189 @@
                             <label for="grado">Grado:</label>
                             <div class="contform">
                             <select class="form-control" id="grado" name="gradoselect">
-                                <option value="0">Seleccione el grado</option>
-                                <option value="12">Todos los grados</option>
-                                <option value="1">Grado 1</option>
-                                <option value="2">Grado 2</option>
-                                <option value="3">Grado 3</option>
-                                <option value="4">Grado 4</option>
-                                <option value="5">Grado 5</option>
-                                <option value="6">Grado 6</option>
-                                <option value="7">Grado 7</option>
-                                <option value="8">Grado 8</option>
-                                <option value="9">Grado 9</option>
-                                <option value="10">Grado 10</option>
-                                <option value="11">Grado 11</option>
-                            </select>
+                                <option value="0">Seleccione el grado</option>';
+                                if($idgrado == 12){
+                                    echo '
+                                    <option value="12" selected>Todos los grados</option>
+                                    <option value="1">Grado 1</option>
+                                    <option value="2">Grado 2</option>
+                                    <option value="3">Grado 3</option>
+                                    <option value="4">Grado 4</option>
+                                    <option value="5">Grado 5</option>
+                                    <option value="6">Grado 6</option>
+                                    <option value="7">Grado 7</option>
+                                    <option value="8">Grado 8</option>
+                                    <option value="9">Grado 9</option>
+                                    <option value="10">Grado 10</option>
+                                    <option value="11">Grado 11</option>    
+                                    ';
+                                }else if ($idgrado == 1){
+                                    echo '
+                                    <option value="12">Todos los grados</option>
+                                    <option value="1" selected>Grado 1</option>
+                                    <option value="2">Grado 2</option>
+                                    <option value="3">Grado 3</option>
+                                    <option value="4">Grado 4</option>
+                                    <option value="5">Grado 5</option>
+                                    <option value="6">Grado 6</option>
+                                    <option value="7">Grado 7</option>
+                                    <option value="8">Grado 8</option>
+                                    <option value="9">Grado 9</option>
+                                    <option value="10">Grado 10</option>
+                                    <option value="11">Grado 11</option>    
+                                    ';
+                                }else if ($idgrado == 2){
+                                    echo '
+                                    <option value="12">Todos los grados</option>
+                                    <option value="1">Grado 1</option>
+                                    <option value="2" selected>Grado 2</option>
+                                    <option value="3">Grado 3</option>
+                                    <option value="4">Grado 4</option>
+                                    <option value="5">Grado 5</option>
+                                    <option value="6">Grado 6</option>
+                                    <option value="7">Grado 7</option>
+                                    <option value="8">Grado 8</option>
+                                    <option value="9">Grado 9</option>
+                                    <option value="10">Grado 10</option>
+                                    <option value="11">Grado 11</option>    
+                                    ';
+                                }else if ($idgrado == 3){
+                                    echo '
+                                    <option value="12">Todos los grados</option>
+                                    <option value="1">Grado 1</option>
+                                    <option value="2">Grado 2</option>
+                                    <option value="3" selected>Grado 3</option>
+                                    <option value="4">Grado 4</option>
+                                    <option value="5">Grado 5</option>
+                                    <option value="6">Grado 6</option>
+                                    <option value="7">Grado 7</option>
+                                    <option value="8">Grado 8</option>
+                                    <option value="9">Grado 9</option>
+                                    <option value="10">Grado 10</option>
+                                    <option value="11">Grado 11</option>    
+                                    ';
+                                }else if ($idgrado == 4){
+                                    echo '
+                                    <option value="12">Todos los grados</option>
+                                    <option value="1">Grado 1</option>
+                                    <option value="2">Grado 2</option>
+                                    <option value="3">Grado 3</option>
+                                    <option value="4" selected>Grado 4</option>
+                                    <option value="5">Grado 5</option>
+                                    <option value="6">Grado 6</option>
+                                    <option value="7">Grado 7</option>
+                                    <option value="8">Grado 8</option>
+                                    <option value="9">Grado 9</option>
+                                    <option value="10">Grado 10</option>
+                                    <option value="11">Grado 11</option>    
+                                    ';
+                                }else if ($idgrado == 5){
+                                    echo '
+                                    <option value="12">Todos los grados</option>
+                                    <option value="1">Grado 1</option>
+                                    <option value="2">Grado 2</option>
+                                    <option value="3">Grado 3</option>
+                                    <option value="4">Grado 4</option>
+                                    <option value="5" selected>Grado 5</option>
+                                    <option value="6">Grado 6</option>
+                                    <option value="7">Grado 7</option>
+                                    <option value="8">Grado 8</option>
+                                    <option value="9">Grado 9</option>
+                                    <option value="10">Grado 10</option>
+                                    <option value="11">Grado 11</option>    
+                                    ';
+                                }else if ($idgrado == 6){
+                                    echo '
+                                    <option value="12">Todos los grados</option>
+                                    <option value="1">Grado 1</option>
+                                    <option value="2">Grado 2</option>
+                                    <option value="3">Grado 3</option>
+                                    <option value="4">Grado 4</option>
+                                    <option value="5">Grado 5</option>
+                                    <option value="6" selected>Grado 6</option>
+                                    <option value="7">Grado 7</option>
+                                    <option value="8">Grado 8</option>
+                                    <option value="9">Grado 9</option>
+                                    <option value="10">Grado 10</option>
+                                    <option value="11">Grado 11</option>    
+                                    ';
+                                }else if ($idgrado == 7){
+                                    echo '
+                                    <option value="12">Todos los grados</option>
+                                    <option value="1">Grado 1</option>
+                                    <option value="2">Grado 2</option>
+                                    <option value="3">Grado 3</option>
+                                    <option value="4">Grado 4</option>
+                                    <option value="5">Grado 5</option>
+                                    <option value="6">Grado 6</option>
+                                    <option value="7" selected>Grado 7</option>
+                                    <option value="8">Grado 8</option>
+                                    <option value="9">Grado 9</option>
+                                    <option value="10">Grado 10</option>
+                                    <option value="11">Grado 11</option>    
+                                    ';
+                                }else if ($idgrado == 8){
+                                    echo '
+                                    <option value="12">Todos los grados</option>
+                                    <option value="1">Grado 1</option>
+                                    <option value="2">Grado 2</option>
+                                    <option value="3">Grado 3</option>
+                                    <option value="4">Grado 4</option>
+                                    <option value="5">Grado 5</option>
+                                    <option value="6">Grado 6</option>
+                                    <option value="7">Grado 7</option>
+                                    <option value="8" selected>Grado 8</option>
+                                    <option value="9">Grado 9</option>
+                                    <option value="10">Grado 10</option>
+                                    <option value="11">Grado 11</option>    
+                                    ';
+                                }else if ($idgrado == 9){
+                                    echo '
+                                    <option value="12">Todos los grados</option>
+                                    <option value="1">Grado 1</option>
+                                    <option value="2">Grado 2</option>
+                                    <option value="3">Grado 3</option>
+                                    <option value="4">Grado 4</option>
+                                    <option value="5">Grado 5</option>
+                                    <option value="6">Grado 6</option>
+                                    <option value="7">Grado 7</option>
+                                    <option value="8">Grado 8</option>
+                                    <option value="9" selected>Grado 9</option>
+                                    <option value="10">Grado 10</option>
+                                    <option value="11">Grado 11</option>    
+                                    ';
+                                }else if ($idgrado == 10){
+                                    echo '
+                                    <option value="12">Todos los grados</option>
+                                    <option value="1">Grado 1</option>
+                                    <option value="2">Grado 2</option>
+                                    <option value="3">Grado 3</option>
+                                    <option value="4">Grado 4</option>
+                                    <option value="5">Grado 5</option>
+                                    <option value="6">Grado 6</option>
+                                    <option value="7">Grado 7</option>
+                                    <option value="8">Grado 8</option>
+                                    <option value="9">Grado 9</option>
+                                    <option value="10" selected>Grado 10</option>
+                                    <option value="11">Grado 11</option>    
+                                    ';
+                                }else if ($idgrado == 11){
+                                    echo '
+                                    <option value="12">Todos los grados</option>
+                                    <option value="1">Grado 1</option>
+                                    <option value="2">Grado 2</option>
+                                    <option value="3">Grado 3</option>
+                                    <option value="4">Grado 4</option>
+                                    <option value="5">Grado 5</option>
+                                    <option value="6">Grado 6</option>
+                                    <option value="7">Grado 7</option>
+                                    <option value="8">Grado 8</option>
+                                    <option value="9">Grado 9</option>
+                                    <option value="10">Grado 10</option>
+                                    <option value="11" selected>Grado 11</option>    
+                                    ';
+                                }
+                           echo ' </select>
                             <input type="text" name="ppcedula" id="ppcedula" style="display:none;" value="'.$document.'">
                             <button type="submit" class="btn btn-primary" name="btnsearch" id="btnsearch"><i class="fas fa-search"></i></button>
                             </div>
@@ -248,12 +421,12 @@
                                         for($i=0;$i<count($buscarmatrigradoest['Matricula']);$i++){
                                             echo '<tr>'.
                                             '<td>'.$buscarmatrigradoest['Matricula'][$i]['codigo'].'</td>';
-                                            $parametrom = "=".$buscarmatrigradoest['Matricula'][$i]['pkEstudiante'];
-                                            $nombest = json_decode(file_get_contents($ip.$proyecto.$url_buscarestudiante.$parametrom),true);
+                                            $parametroest = "=".$buscarmatrigradoest['Matricula'][$i]['pkEstudiante'];
+                                            $nombest = json_decode(file_get_contents($ip.$proyecto.$url_buscarestudiante.$parametroest),true);
                                             echo '<td>'.$nombest['nombres'].'</td>';
 
-                                            $parametroest = "=".$buscarmatrigradoest['Matricula'][$i]['pkMateria'];
-                                            $materia = json_decode(file_get_contents($ip.$proyecto.$url_buscarmateria.$parametroest),true);
+                                            $parametrom = "=".$buscarmatrigradoest['Matricula'][$i]['pkMateria'];
+                                            $materia = json_decode(file_get_contents($ip.$proyecto.$url_buscarmateria.$parametrom),true);
                                             echo '<td>'.$materia['nombre'].'</td>'.
                                             '<td>'.$buscarmatrigradoest['Matricula'][$i]['notaDefinitiva'].'</td>';
 
