@@ -24,6 +24,14 @@ if(isset($_POST['btnupmtr'])){
     $pdefinitiva = trim($_POST['definitiva']);
     $pest = trim($_POST['est']);
 
+    $array = [
+        "codigo" => $pmatricula,
+        "estado" => $pest,
+        "notaDefinitiva" => $pdefinitiva
+        
+   ];
+
+
     //$uptade_matricula_est = json_encode(file_put_contents($ip.$proyecto.$url_update_mtr_est,),true);
 
 }
