@@ -26,8 +26,12 @@
         $idgrado = trim($_POST['gradoselect']);
         $parametro = "=".$document."&grado=".$idgrado;
         $buscarestudiantes = json_decode(file_get_contents($ip.$proyecto.$url_buscarestudiante.$parametro),true);
-
-        $buscarmatrigradoest = json_decode(file_get_contents($ip.$proyecto.$url_matr_est_grado.$parametro),true);
+        if($idgrado != 12){
+            $buscarmatrigradoest = json_decode(file_get_contents($ip.$proyecto.$url_matr_est_grado.$parametro),true);
+        }else{
+            
+        }
+        
 
        
 
