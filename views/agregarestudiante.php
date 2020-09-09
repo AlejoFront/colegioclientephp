@@ -28,8 +28,6 @@
             "genero"=> $genero,
             "nombres" => $nombre,
             "telefono" => $telefono
-
-
        ];
 
      $require = json_encode($array);

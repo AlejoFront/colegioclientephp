@@ -22,6 +22,8 @@
     
     //Servicio Matriculas
 
+    
+    $url_add_matr = 'serviciosWebMatricula/matricularEstudiante';
     $url_list_matriculas = 'serviciosWebMatricula/darMatriculas';
     $url_matr_est_grado =  'serviciosWebMatricula/darMatriculasEstudianteGrado?documento';
     $url_mtr_est = 'serviciosWebMatricula/darMatriculaCodigo?codigo';

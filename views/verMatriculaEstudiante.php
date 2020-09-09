@@ -126,7 +126,7 @@
                     '<td>'.'
                         <center>
                         <form method="POST">
-                        <input type="text" name="pcedula" id="pcedula" style="display:none;"  value="'.$document.'">
+                            <input type="text" name="pcedula" id="pcedula" style="display:none;"  value="'.$document.'">
                             <input type="submit"  class="btn btn-primary fas fa-eye" value="ver" name="btnver" id="btnver">
                         </form>
                         </center>
@@ -248,7 +248,7 @@
                                             $nombest = json_decode(file_get_contents($ip.$proyecto.$url_buscarestudiante.$parametrom),true);
                                             echo '<td>'.$nombest['nombres'].'</td>';
 
-                                            $parametroest = $buscarmatrigradoest['Matricula'][$i]['pkMateria'];
+                                            $parametroest = "=".$buscarmatrigradoest['Matricula'][$i]['pkMateria'];
                                             $materia = json_decode(file_get_contents($ip.$proyecto.$url_buscarmateria.$parametroest),true);
                                             echo '<td>'.$materia['nombre'].'</td>'.
                                             '<td>'.$buscarmatrigradoest['Matricula'][$i]['notaDefinitiva'].'</td>';
