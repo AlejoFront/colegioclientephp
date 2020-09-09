@@ -6,6 +6,7 @@
 ?>
 
     <h2 class="title">Listar Estudiantes</h2>
+    
     <div class="cont-tb">
         <table class="table table-dark table-striped mt8">
         <thead>

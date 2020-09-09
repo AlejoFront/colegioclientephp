@@ -1,4 +1,5 @@
 <?php
+    echo "<title> Promedio Estudiante | Servicio Web Rest</title>";
     include '../includes/menu_layout.php';
     include '../config/routes.php';
     $validate = false;
@@ -13,7 +14,7 @@
     
 ?>
 
-            <h2 class="title">Buscar Estudainte por documento</h2>
+            <h2 class="title">Buscar Estudiante por documento</h2>
     <div class="cont-tb">
 
 

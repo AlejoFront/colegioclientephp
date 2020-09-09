@@ -1,5 +1,5 @@
 <?php
-    echo "<title>Listar Matriculas | Servicio Web Rest</title>";
+    echo "<title>Filtrar  Matriculas | Servicio Web Rest</title>";
     include '../includes/menu_layout.php';
     include '../config/routes.php';
     $valuestate = false;

@@ -57,7 +57,6 @@ if(isset($_POST['btnupmtr'])){
             <label for="genero">Estado:</label>
             <select class="form-control" id="est" name="est">
                 <?php 
-
                     if($matr_est_grado['estado'] == 0){
                         echo '<option value="0" selected>Matriculada</option>';
                     }else if($matr_est_grado['estado'] == 1){

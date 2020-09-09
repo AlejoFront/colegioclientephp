@@ -1,4 +1,5 @@
 <?php
+    echo "<title> Eliminar Estudiante | Servicio Web Rest</title>";
     include '../includes/menu_layout.php';
     include '../config/routes.php';
     $validate = false;
@@ -21,7 +22,7 @@
     }
 ?>
 
-            <h2 class="title">Eliminar Estudainte por documento</h2>
+            <h2 class="title">Eliminar Estudiante por documento</h2>
     <div class="cont-tb">
 
 

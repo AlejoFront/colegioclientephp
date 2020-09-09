@@ -41,7 +41,6 @@
             <h2 class="title">Actualizar Matricula Estudiante por documento</h2>
     <div class="cont-tb">
 
-
                 <form method = 'POST' class="mt8 formbusquedaest">
                     <div class="form-group">
                         <label for="pwd">Documento del estudiante:</label>

@@ -32,15 +32,9 @@
             $valgrado11 = count($materiagrado['Materia']);
         }
     }
-
-    
-
-
-
-
 ?>
 
-<h1 class="title">grafica Cantidad Materias por grado</h1>
+<h1 class="title">Grafica Cantidad Materias por grado</h1>
 <div id="chart_div"></div>
 <script>
     google.charts.load('current', {packages: ['corechart', 'bar']});

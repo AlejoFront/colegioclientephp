@@ -1,5 +1,5 @@
 <?php
-    echo "<title> Actualizar Matriculas | Servicio Web Rest</title>";
+    echo "<title> Eliminar Matriculas | Servicio Web Rest</title>";
     include '../includes/menu_layout.php';
     include '../config/routes.php';
     $validate = false;

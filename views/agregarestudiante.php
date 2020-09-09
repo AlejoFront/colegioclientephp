@@ -1,5 +1,5 @@
 <?php
-    echo "<title> Matricular Estudiante | Servicio Web Rest</title>";
+    echo "<title> Agregar Estudiante | Servicio Web Rest</title>";
     include '../includes/menu_layout.php';
     include '../config/routes.php';
     $result ="";
@@ -44,7 +44,7 @@
 
 ?>
 
-<h2 class="title">Agregar Estudainte</h2>
+<h2 class="title">Agregar Estudiante</h2>
 
 <div class="contformsadd">
         <?php 

@@ -9,12 +9,12 @@
             $parametro = "=".$document;
             $buscarestudiantes = json_decode(file_get_contents($ip.$proyecto.$url_buscarestudiante.$parametro),true);
 
-        print_r($buscarestudiantes);
+        //print_r($buscarestudiantes);
     }
     
 ?>
 
-            <h2 class="title">Buscar Estudainte por documento</h2>
+            <h2 class="title">Buscar Estudiante por documento</h2>
     <div class="cont-tb">
 
 
