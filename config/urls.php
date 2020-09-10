@@ -33,4 +33,5 @@
     $url_matr_docu_est = 'serviciosWebMatricula/darMatriculasEstudiante?documento';
     $url_mtr_grado = 'serviciosWebMateria/darMateriasPorGrado?grado';
     $url_delete_matricula = 'serviciosWebMatricula/borrarMatriculaCodigo?codigo';
+
     

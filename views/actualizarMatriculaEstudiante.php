@@ -451,12 +451,17 @@
                                             {
                                                 echo '<td>'.'Aprobada'.'</td>';
                                             }
-
+                                            $fechinscrip =$buscarmatrigradoest['Matricula'][$i]['fechaInscripcion'];
+                                            $fechinicio = $buscarmatrigradoest['Matricula'][$i]['fechaInicio'];
+                                            $fechfinal =$buscarmatrigradoest['Matricula'][$i]['fechaFinal'];
                                             echo '<td>
                                             <form method ="POST" action="editMatriculaEstudiante.php">
                                                 <input type="text" name="idmat" id="idmat" value='.$cdmatri.' style="display:none;">
                                                 <input type="text" name="idmater" id="idmater" value='.$cdmateria.' style="display:none;">
                                                 <input type="text" name="idestu" id="idestu" value='.$cdestu.' style="display:none;">
+                                                <input type="text" name="fechins" id="fechins" value='.$fechinscrip.' style="display:none;">
+                                                <input type="text" name="fechini" id="fechini" value='.$fechinicio.' style="display:none;">
+                                                <input type="text" name="fechfinal" id="fechfinal" value='.$fechfinal.' style="display:none;">
                                                 <button type="submit" class="btn btn-info" name="btnupdate" id="btnupdate" data-toggle="modal" data-target="#myModal"><i class="fas fa-pen-square"></i></button>
                                             </form>
                                                   </td>';
