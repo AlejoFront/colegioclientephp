@@ -59,14 +59,7 @@ if(isset($_POST['btnupmtr'])){
         "pkMateria" => intval($codigoMateria)   
    ];   
    
-    
-    // 
-    // curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-    // curl_setopt($curl, CURLOPT_POSTFIELDS, json_encode($array));
-    // curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "POST");
-    // $response = curl_exec($curl);
-    // $httpCode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
-    
+   
 
     $require = json_encode($array);
     curl_setopt($curl, CURLOPT_POSTFIELDS, $require);
@@ -75,19 +68,6 @@ if(isset($_POST['btnupmtr'])){
     $result = curl_exec($curl);
     $respuesta = curl_getinfo($curl,CURLINFO_HTTP_CODE);
     curl_close($curl);
-
-    // echo "->>>>>>>>>>>>>>>>  "."<br>";
-
-
-    $json = json_encode($array);
-    echo $json ;
-    // echo "<br>".$codestu."<br>";
-    // echo $fechfinal."<br>";
-    // echo $fechaInicio."<br>";
-    // echo $fechInscrip."<br>";
-    // echo $codigoMateria."<br>";
-    echo "<br>";
-    echo $respuesta;
 
 }
 
@@ -100,57 +80,30 @@ if(isset($_POST['btnupmtr'])){
     <form method="POST">
         <?php  
             if($validate ==true){
-                print_r($array);
-
+                if($respuesta == 204){
+                    echo '
+                    <div class="alert alert-success" alert-dismissible fade show" role="alert">
+                         Matricula Actualizada.
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>    
+                        ';
+                }else {
+                    echo '
+                    <div class="alert alert-danger" alert-dismissible fade show" role="alert">
+                        <strong>Los iento!</strong> Matricula No Actualizada.
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>    
+                        ';
+                }
                 echo '
                     <div class="contbtn">
                         <a href="actualizarMatriculaEstudiante.php" class="btn btn-success"> 
-                        Para actualizar otra matricula debes regresar has click aqui</a>
-                    </div>
-                    <div class="form-group">
-                    <label for="nombre">Codigo Matricula:</label>
-                    <input type="text" class="form-control" id="codMatricula" name="codMatricula" disabled value="">
-                    </div>
-                    <div class="form-group">
-                        <label for="codigo">Codigo Estudiante:</label>
-                        <input type="text" class="form-control" id="codes" name="codes" readonly value="">
-                    </div>
-                    <div class="form-group">
-                        <label for="materia">Materia:</label>
-                        <input type="text" class="form-control" id="materia" name="materia" readonly value="">
-                    </div>
-                    <div class="form-group">
-                        <label for="fechains">Fecha Inscripcion:</label>
-                        <input type="text" class="form-control" id="fechaIns" name="fechaIns" readonly value="">
-                    </div>
-            
-                    <div class="form-group">
-                        <label for="fechini">fecha Inicio:</label>
-                        <input type="text" class="form-control" id="fechaInicio" name="fechaInicio" readonly value="">
-                    </div>
-            
-                    <div class="form-group">
-                        <label for="fechafin">fecha Final:</label>
-                        <input type="text" class="form-control" id="fechaFinal" name="fechaFinal" readonly value="">
-                    </div>
-            
-                    <div class="form-group">
-                        <label for="def">Definitiva:</label>
-                        <input type="text" class="form-control" id="definitiva" name="definitiva" value="" readonly>
-                    </div>
-                    <div class="form-group">
-                        <label for="estado">Estado:</label>
-                        <select class="form-control" id="est" name="est" readonly>
-                            <option value="">Estado</option>
-                            <option value="0">Matriculada</option>
-                            <option value="1">Cursando</option>
-                            <option value="2">Rerpobada</option>
-                            <option value="3">Aprobada</option>
-                    </select>
-                    <br>  
-
-                </div>
-                ';
+                         regresar</a>
+                    </div>';
             }else{
                 echo '
                     <div class="form-group">
