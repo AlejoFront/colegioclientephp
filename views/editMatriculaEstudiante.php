@@ -46,7 +46,8 @@ if(isset($_POST['btnupmtr'])){
         $fechaInicio = trim($_POST['fechaInicio']);
         $fechInscrip = trim($_POST['fechaIns']);
         $codigoMateria = $_POST['ppcomt'];
-
+        $url = $ip.$proyecto.$url_update_mtr_est;
+        $curl = curl_init($url);
     $array = [  
         "codigo" => intval($pkmatricula),
         "estado" => intval($pest),
@@ -58,18 +59,22 @@ if(isset($_POST['btnupmtr'])){
         "pkMateria" => intval($codigoMateria)   
    ];   
    
-    $url = $ip.$proyecto.$url_update_mtr_est;
-    $curl = curl_init($url);
-    //curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-    //curl_setopt($curl, CURLOPT_POSTFIELDS, json_encode($array));
-    //curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "PUT");
-    curl_setopt($curl, CURLOPT_PUT, true);
-    curl_setopt($curl, CURLOPT_POSTFIELDS, json_encode($array));
-    curl_setopt($curl, CURLOPT_FOLLOWLOCATION, 1);
-    curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-    $response = curl_exec($curl);
-    $httpCode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
     
+    // 
+    // curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+    // curl_setopt($curl, CURLOPT_POSTFIELDS, json_encode($array));
+    // curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "POST");
+    // $response = curl_exec($curl);
+    // $httpCode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+    
+
+    $require = json_encode($array);
+    curl_setopt($curl, CURLOPT_POSTFIELDS, $require);
+    curl_setopt($curl, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
+    curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+    $result = curl_exec($curl);
+    $respuesta = curl_getinfo($curl,CURLINFO_HTTP_CODE);
+    curl_close($curl);
 
     // echo "->>>>>>>>>>>>>>>>  "."<br>";
 
@@ -82,7 +87,7 @@ if(isset($_POST['btnupmtr'])){
     // echo $fechInscrip."<br>";
     // echo $codigoMateria."<br>";
     echo "<br>";
-    echo $httpCode;
+    echo $respuesta;
 
 }
 
