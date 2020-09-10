@@ -14,7 +14,7 @@
     
 ?>
 
-            <h2 class="title">Buscar Estudiante por documento</h2>
+            <h2 class="title">Promedio Estudiante </h2>
     <div class="cont-tb">
 
 
